@@ -33,7 +33,7 @@ function App() {
   const filterByExpenseYear = expenseYear => {
     console.log('in App.js');
     console.log(expenseYear);
-    let newExpensesTab = expenses.filter(expense => expense.date.getFullYear() == expenseYear);
+    let newExpensesTab = expenses.filter(expense => expense.date.getFullYear() === expenseYear);
     // console.log(newExpensesTab);
     setExpenses(newExpensesTab);
     expenses = newExpenses;

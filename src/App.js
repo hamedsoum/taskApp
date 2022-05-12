@@ -3,7 +3,7 @@ import Expenses from './components/Expenses/Expenses';
 import React, { useState } from "react"
 import NewExpense from './components/NewExpenses/NewExpense';
 function App() {
-  const expenses = [
+  let expenses = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -36,8 +36,9 @@ function App() {
     let newExpensesTab = expenses.filter(expense => expense.date.getFullYear() == expenseYear);
     // console.log(newExpensesTab);
     setExpenses(newExpensesTab);
-    console.log(newExpenses);
-    // expenses = newExpenses;
+    expenses = newExpenses;
+    console.log(expenses);
+
     // setExpenses(expenses.filter(expense => expense.date.getFullYear() == expenseYear));
    
   }
@@ -45,7 +46,7 @@ function App() {
     <div>
       <ExpensesFilter onFilterByExpenseYear={filterByExpenseYear} />
         <NewExpense onAddExpense={addExpenseHandler} />
-         <Expenses items = {expenses} />
+         <Expenses items ={expenses} />
 
     </div>
   );
